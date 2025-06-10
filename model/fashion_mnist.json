@@ -59,10 +59,10 @@
         ]
     },
     {
-        "name": "dropout",
+        "name": "dropout_1",
         "type": "Dropout",
         "config": {
-            "name": "dropout",
+            "name": "dropout_1",
             "trainable": true,
             "dtype": {
                 "module": "keras",
@@ -120,10 +120,10 @@
         ]
     },
     {
-        "name": "dropout_1",
+        "name": "dropout_2",
         "type": "Dropout",
         "config": {
-            "name": "dropout_1",
+            "name": "dropout_2",
             "trainable": true,
             "dtype": {
                 "module": "keras",
