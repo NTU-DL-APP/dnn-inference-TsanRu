@@ -31,7 +31,7 @@
                 },
                 "registered_name": null
             },
-            "units": 128,
+            "units": 512,
             "activation": "relu",
             "use_bias": true,
             "kernel_initializer": {
@@ -59,6 +59,26 @@
         ]
     },
     {
+        "name": "dropout",
+        "type": "Dropout",
+        "config": {
+            "name": "dropout",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "rate": 0.3,
+            "seed": null,
+            "noise_shape": null
+        },
+        "weights": []
+    },
+    {
         "name": "dense_layer_2",
         "type": "Dense",
         "config": {
@@ -72,7 +92,7 @@
                 },
                 "registered_name": null
             },
-            "units": 64,
+            "units": 256,
             "activation": "relu",
             "use_bias": true,
             "kernel_initializer": {
@@ -97,6 +117,67 @@
         "weights": [
             "dense_layer_2_W",
             "dense_layer_2_b"
+        ]
+    },
+    {
+        "name": "dropout_1",
+        "type": "Dropout",
+        "config": {
+            "name": "dropout_1",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "rate": 0.3,
+            "seed": null,
+            "noise_shape": null
+        },
+        "weights": []
+    },
+    {
+        "name": "dense_layer_3",
+        "type": "Dense",
+        "config": {
+            "name": "dense_layer_3",
+            "trainable": true,
+            "dtype": {
+                "module": "keras",
+                "class_name": "DTypePolicy",
+                "config": {
+                    "name": "float32"
+                },
+                "registered_name": null
+            },
+            "units": 128,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+                "module": "keras.initializers",
+                "class_name": "GlorotUniform",
+                "config": {
+                    "seed": null
+                },
+                "registered_name": null
+            },
+            "bias_initializer": {
+                "module": "keras.initializers",
+                "class_name": "Zeros",
+                "config": {},
+                "registered_name": null
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null
+        },
+        "weights": [
+            "dense_layer_3_W",
+            "dense_layer_3_b"
         ]
     },
     {
