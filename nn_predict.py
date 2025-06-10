@@ -11,17 +11,16 @@ def relu(x):
 
 def softmax(x):
     """
-    實現 SoftMax 函數。
-    為了數值穩定性（避免 overflow），先將每個樣本的數值減去其最大值。
+    實現 SoftMax 函數，並確保能處理一維和二維輸入。
     """
-    # 確保輸入是二維陣列以處理單一樣本和批次樣本
+    # 如果輸入是一維陣列，將其轉換為二維（代表單一樣本）
     if x.ndim == 1:
         x = x.reshape(1, -1)
     
     # 減去最大值以提高數值穩定性
     e_x = np.exp(x - np.max(x, axis=1, keepdims=True))
     
-    # 計算機率分佈
+    # 計算機率分佈並回傳
     return e_x / np.sum(e_x, axis=1, keepdims=True)
 
 # === Flatten ===
